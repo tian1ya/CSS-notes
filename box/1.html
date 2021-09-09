@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        padding: 100px;
+      }
+      article {
+        border: solid 2px #dddddd;
+        /* width: 800px; */
+
+        width: 300px;
+        padding: 50px 0;
+      }
+
+      div {
+        border: solid 3px red;
+         /*上 右左 下均是 30  */
+        /* margin: 30px; */
+
+        /* 上下30px， 左右 60px */
+        /* margin: 30px 60px; */
+
+        /* 上:30px, 右: 40px, 下:60px, 左:70px,  */
+        /* margin: 30px 40px 60px 70px; */
+
+        /* 单独控制 */
+        /* margin-top: 30px;
+        margin-right: 40px;
+        margin-bottom: 50px;
+        margin-left: 60px; */
+
+
+        /* width: 400px; */
+        /* 将剩下的 400px 左右自动分配，这样div 内容就可以在 article 元素的中间了 */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+        /* margin: 0 auto; */
+
+        /* 左侧溢出 */
+        margin-left: -50px;
+
+   
+
+      }
+      h2 {
+        border: solid 1px red;
+        margin-bottom: 30px;
+        margin-top: 30px;
+      }
+
+      h3 {
+        border: solid 1px red;
+        margin-bottom: 60px;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+      h2 的上下 margin 都是30， 但是这里上下接触的 margin 会合并，会取二者之间最大的那个 margin 
+      作为他们之间的margin， 这种情况是ok 的，尤其是在表格中最适合的
+      主要是记住，这里上下的 margin 不会是相加的关系，而是取最大值的关系。
+  -->
+    <h3>houdunren.com</h3>
+    <h2>houdunren.com--333</h2>
+    <article>
+      <div>
+        houdunren
+      </div>
+    </article>
+  </body>
+</html>

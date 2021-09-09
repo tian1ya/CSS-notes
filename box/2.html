@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        padding: 100px;
+      }
+      article {
+        border: solid 2px #0aec7b;
+        width: 300px;
+        height: 300px;
+        /* 
+          这个时候 width 和 height 只包括里面的内容，实际上大小应该是
+          (300px + 2px) x (300px + 2px)
+         */
+         padding: 50px;
+         /* 
+            如果在加 50 的内边距
+            真正的大小就变成了  (300px + 2px + 50px) x (300px + 2px + 50px)
+          */
+          box-sizing: border-box
+          /* 
+            加上这个属性，那么border 里面的 内容 + padding + border
+            算起来才是 width/heigh
+            还是这里的例子，width=300，heigh=300，padding=50px
+            那么里面的内容就变成了 196 * 196 收到挤压，以保证
+            border 对外的表现不发生变化
+           */
+      }
+
+      div {
+        border: solid 3px red;
+        /* padding: 30px; */
+        padding: 30px 40px 50px 60px;
+        /* padding-left: 30px; */
+      }
+    </style>
+  </head>
+
+  <!-- 
+    内边距和外边距使用方式都是一样的
+   -->
+  <body>
+    <article>
+      <div>
+        houdunren
+      </div>
+    </article>
+  </body>
+</html>

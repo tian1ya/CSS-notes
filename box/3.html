@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        padding: 100px;
+      }
+      article {
+        /* border: solid 2px #dddddd; */
+        width: 300px;
+        height: 300px;
+        border-style: solid;
+        /* 
+          border-top-style: groove; 
+          可以分别对4个边进行stype width 的设置
+        */
+        border-width: 20px;
+        border-bottom: groove 20px green;
+      }
+
+      div {
+        /* border: solid 3px red; */
+        padding: 30px 50px 100px 80px
+      }
+
+      /* 可以对普通的文件进行设置 */
+      div>em{
+        /* border-bottom: solid 1px springgreen; */
+        border-left: solid 10px springgreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <div>
+        houdunren
+        <em>nihaoa</em>
+      </div>
+    </article>
+  </body>
+</html>
