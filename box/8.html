@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        padding: 100px;
+      }
+      article {
+        border: solid 2px #dddddd;
+        width: 300px;
+        height: 300px;
+      }
+
+      div {
+        border: solid 3px red;
+        /* div 中的内容溢出 div */
+        width: 300px;
+        height: 100px;
+        /* 产生滚动条 scroll 会一直又滚动条，即使是内容不溢出 */
+        /* overflow: scroll; */
+
+        /* 只有内容溢出时候才会出现滚动条 */
+        /* overflow: auto; */
+
+        /* 溢出内容使用 ... 代替 */
+        overflow: hidden;
+        /* 不换行 */
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <div>
+        Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默认 slot 不会被渲染到 DOM 上。因此，
+        如果需要执行 DOM 操作，或通过 ref 获取相应组件，请在 open 事件回调中进行。
+        如果 visible 属性绑定的变量位于 Vuex 的 store 内，那么 .sync
+        不会正常工作。此时需要去除 .sync 修饰符，同时监听 Dialog 的 
+        open 和 close 事件，在事件回调中执行 Vuex 中对应的 mutation
+        更新 visible 属性绑定的变量的值。
+      </div>
+    </article>
+  </body>
+</html>

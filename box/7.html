@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      /* body {
+        padding: 100px;
+      } */
+      article {
+        border: solid 1px #dddddd;
+        /* width: 300px; */
+        padding: 30px;
+        width: 400px;
+      }
+
+      div {
+        /* border: solid 3px red; */
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-bottom: 10px;
+      }
+
+      div:nth-of-type(1) {
+        /* 这种方式隐藏之后，空间也腾出来了(丢失空间) */
+        /* display: none; */
+
+        /* 这种方式隐藏但会保留空间 */
+        /* visibility: hidden; */
+        /* 类似于 */
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <div>
+        qqq
+      </div>
+      <div>
+        wwww
+      </div>
+    </article>
+  </body>
+</html>

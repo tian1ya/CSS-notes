@@ -11,17 +11,59 @@
         width: 300px;
       }
 
-      div {
+      /* div {
         border: solid 3px red;
+      } */
+
+      h2 {
+        /* 元素隐藏 */
+        /* display: none; */
       }
+
+      div>a {
+        /* 行元素变块元素 */
+        display: block;
+        text-decoration: none;
+      }
+
+      div>a:hover {
+        background: red;
+      }
+
+      ul>li {
+        /* inline-block 行级别的 box 还是会有 height width  */
+        /* display: inline-block; */
+        /* height: 80px; */
+
+        /* 如果变成 inline 那么就没有 height width了 */
+        display: inline;
+        border: solid 2px #dddddd;
+      }
+
+      ul>li:hover {
+        background: red;
+        /* 文字颜色 */
+        color: yellow;
+        cursor: pointer;
+      }
+      
     </style>
   </head>
 
   <body>
     <article>
+      <ul>
+        <li>LINUX</li>
+        <li>LINUX2</li>
+        <li>LINUX2</li>
+      </ul>
       <div>
-        houdunren
+        <a href="">MUSQL</a>
+        <a href="">REDIS</a>
       </div>
+      <h2>
+        houdunren
+      </h2>
     </article>
   </body>
 </html>
