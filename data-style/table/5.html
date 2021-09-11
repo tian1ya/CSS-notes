@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+    table {
+        border: none;
+        border-collapse: collapse;
+      }
+
+    table thead {
+      background: red;
+    }
+
+    table td {
+      border: none;
+      border-right: solid 1px #dddddd;
+      border-bottom: solid 1px #dddddd;
+      padding: 10px;
+     }
+
+     table tr:first-child td {
+        border-top: solid 1px #ddd;
+    }
+
+    table td:last-child {
+        border-right: none;
+    }
+
+    table tr:hover {
+      /* hover 上去后变色，以及鼠标变成小手 */
+            background: #ddd;
+            cursor: pointer;
+        }
+
+    </style>
+  </head>  
+  <body>
+    <!-- 使用 html 定义表格 -->
+    <table border="1">
+      <thead>
+          <tr>
+              <td>编号</td>
+              <td>标题</td>
+              <td>网址</td>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td>在线社区</td>
+              <td>houdunren.com</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>开源系统</td>
+              <td>hdcms.com</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>开发实战</td>
+              <td>houdunwang.com</td>
+          </tr>
+      </table>
+  </body>
+</html>

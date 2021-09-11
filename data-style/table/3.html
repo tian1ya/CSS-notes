@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      table {
+        /* display: table; */
+        /* border: solid 1px #db0e0e; */
+        /* width: 100%; */
+        background: url(heima.jpg);
+        background-size: 100% 100% ;
+      }
+
+      table thead {
+        /* background: red; */
+      }
+
+      /* table tbody tr:first-child {
+        background: rgb(76, 0, 255);
+      } */
+
+      /* 优先级更高，会覆盖  table tbody tr:first-child */
+      /* table tbody tr td {
+        background: rgb(0, 255, 98);
+      } */
+
+      table tbody tr:nth-child(odd) {
+        background: red;
+        color: white;
+      }
+
+      table td {
+        /* td 中的字体设置 */
+        color: rgb(32, 18, 230);
+        font-size: 14px;
+      }
+
+      table td 
+
+      
+
+    </style>
+  </head>  
+  <body>
+    <!-- 使用 html 定义表格 -->
+    <table border="1">
+      <thead>
+        <tr>
+          <td>编号</td>
+          <td>标题</td>
+          <td>网址</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11</td>
+          <td>22</td>
+          <td>33</td>
+        </tr>
+        <tr>
+          <td>11-2</td>
+          <td>22-2</td>
+          <td>33-2</td>
+        </tr>
+      </tbody>
+      <!-- <tfooter>
+        <tr>
+          <td>1-footer</td>
+          <td>aa.com-footer</td>
+          <td>aa.com-footer</td>
+        </tr>
+      </tfooter> -->
+    </table>
+  </body>
+</html>

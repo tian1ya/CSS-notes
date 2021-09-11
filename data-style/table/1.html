@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .table {
+        display: table;
+        border: solid 1px #db0e0e;
+        width: 300px;
+      }
+
+      .table nav {
+        display: table-caption;
+        text-align: center;
+        background: black;
+        color: wheat;
+        padding: 10px;
+      }
+
+      .table section:nth-of-type(1) {
+        font-weight: bold;
+        display: table-header-group;
+        background: #555;
+        color: white;
+      }
+
+      .table section:nth-of-type(2) {
+        display: table-row-group;
+      }
+
+      .table section:nth-of-type(3) {
+        display: table-footer-group;
+        background: rgb(185, 180, 180);
+      }
+
+      .table section ul {
+        display: table-row;
+      }
+
+      .table section ul li {
+        display: table-cell;
+        border: solid 1px #dddddd;
+        padding: 10px;
+      }
+
+    </style>
+  </head>  
+  <body>
+    <!-- 使用 css 样式操作定义表格 -->
+    <article class="table">
+      <!-- 
+        还有一个 caption 标签 
+        caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上
+       -->
+      <nav>教程</nav>
+      <section>
+        <ul>
+          <li>编号</li>
+          <li>标题</li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>后盾人</li>
+          <li>houdunren.com</li>
+        </ul>
+        <ul>
+          <li>开源系统</li>
+          <li>hdcms.com</li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>不断更新视频</li>
+          <li>努力加油</li>
+        </ul>
+      </section>
+    </article>
+
+
+    <!-- 使用 html 定义表格 -->
+    <!-- <table border="1">
+      <thread>
+        <tr>
+          <td>编号</td>
+          <td>标题</td>
+        </tr>
+      </thread>
+      <tfooter>
+        <tr>
+          <td>1</td>
+          <td>aa.com</td>
+        </tr>
+      </tfooter>
+    </table> -->
+  </body>
+</html>
