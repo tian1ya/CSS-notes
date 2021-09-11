@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+    float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，
+    使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。
+     浮动元素会生成一个块级框，而不论它本身是何种元素。
+
+     使用浮动可以控制相邻元素间的排列关系。
+
+     没有设置浮动的块元素是独占一行的
+
+     浮动是对后面元素的影响，前面的浮动对后面的元素有影响，
+     后面的浮动对前面的是没有影响的
+
+     如果前面的元素浮动了，那么意味着它脱离了文档流，那么后面的元素就会
+     补充到文档流中了。
+
+     如果前后的元素都浮动了，那么他们就按照浮动的规则，到达对应的位置
+     如果只给第一个元素设置浮动，第二个元素不设置，后面的元素会占用第一个元素空间。
+
+     浮动元素边界不能超过父元素的padding
+
+     元素浮动后会变为块元素(行级的块)包括行元素如 span，所以浮动后的元素可以设置宽高
+
+    如果去掉 main 中的 height 的配置，那么 main 就会收起来
+    因为这个时候 div 都是脱离文档流的，main 是无法感知到 div 的
+
+     CSS提供了 clear 规则用于清除元素浮动影响。 left/right/both
+   -->
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .clearfix {
+        clear: both
+      }
+
+      main {
+        width: 610px;
+        /* height: 220px; */
+        padding: 20px;
+        border: solid 3px black;
+        margin: 0 auto;
+      }
+      div {
+        width: 300px;
+        height: 200px;
+        box-sizing: border-box;
+        /* float: left; */
+      }
+ /*
+      div:nth-of-type(1) {
+        border: solid 3px red;
+        float: left;
+      }
+      div:nth-of-type(2) {
+        background: green;
+        /* float: left; */
+        /* margin-left: 20px; */
+        /* float: right; */
+        /* border: solid 2px green; */
+      /* } */
+      
+      div.red {
+        border: solid 2px red;
+        float: left;
+      }
+
+      div.green {
+        border: solid 2px greenyellow;
+        float: right;
+      }
+
+      div.blue {
+        background-color: blue;
+        float: left;
+        /* clear: both; */
+      }
+
+      /* 
+        方式二：使用伪元素方式，实质上是和第一种方式是一样的
+      */
+      main::after {
+        content: "aaa";
+        clear: both;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class = "red"></div>
+      <div class = "green"></div>
+      <div class = "blue"></div>
+      <!-- 
+          方式一： 父元素，自动感知浮动的子元素， 父元素被 article 撑开了
+          缺点就是，需要写这么一个不显示的 元素在这里
+      -->
+      <!-- <article class="clearfix"></article> -->
+    </main>
+  </body>
+</html>
