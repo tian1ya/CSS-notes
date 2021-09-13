@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- 
+      定位的基本思想很简单，它允许你定义元素框
+      1. 相对于其正常位置应该出现的位置，
+      2. 或者相对于父元素、
+      3. 另一个元素甚至浏览器窗口本身的位置。
+
+      relative	相对定位, 相对于原来在文档中的位置
+
+      absolute	绝对定位, 相对于最近的含有 position 属性的 父亲标签，
+        如果没有该属性，那么就参照的是整个页面
+        
+      static	默认形为，参考文档流
+      fixed	固定定位
+      sticky	粘性定位
+
+     -->
+
+    
+    <style>
+       * {
+          padding: 0;
+          margin: 0
+        }
+      
+      article {
+        border: solid 5px blueviolet;
+        width:  600px;
+        height: 600px;
+        margin:  100px;
+        
+      }
+      article div {
+        background: red;
+        width:  200px;
+        height: 200px;
+        position: absolute;
+        /* 到达水平和垂直一半 */
+        top: 50%;
+        left: 50%;
+        /* 这个时候 div 的左上角已经到了 article 的中心点， 然后在移动div
+        的各一半就到 aricle 的中心点了*/
+        margin-left: -100px;
+        margin-top: -100px;
+      }
+
+      section {
+        position: relative;
+        background-color: #dddddd;
+        width:  100%;
+        height: 100%;
+        left: 100px;
+        top: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <!-- div 回去参考 section -->
+      <section>
+        <div></div>
+      </section>
+      <div></div>
+    </article>
+  </body>
+</html>

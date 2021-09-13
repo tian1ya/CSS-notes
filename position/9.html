@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- 
+      定位的基本思想很简单，它允许你定义元素框
+      1. 相对于其正常位置应该出现的位置，
+      2. 或者相对于父元素、
+      3. 另一个元素甚至浏览器窗口本身的位置。
+
+      relative	相对定位, 相对于原来在文档中的位置
+
+      absolute	绝对定位, 相对于最近的含有 position 属性的 父亲标签，
+        如果没有该属性，那么就参照的是整个页面
+        
+      static	默认形为，参考文档流
+      fixed	固定定位
+      sticky	粘性定位
+
+     -->
+
+    
+    <style>
+       * {
+         padding: 0px;
+         margin: 0px;
+       }
+       body {
+         padding: 100px;
+       }
+
+       ul {
+         list-style: none;
+       }
+
+       ul li {
+         width: 300px;
+         height: 185px;
+         border: solid 8px blueviolet;
+         overflow: hidden;
+         position: relative;
+       }
+
+       ul li img {
+        width: 100%;
+        /* float: left; */
+        position: absolute;
+        z-index: 2;
+       }  
+
+       ul li span {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background-color: red;
+          border-radius: 50%;
+          text-align: center;
+          font-size: 15px;
+          color: white;
+          /* 文字高度 */
+          line-height: 2em; 
+
+          left: 10px;
+          top:  10px;
+          box-shadow: 0 0 5px #dddddd;
+          z-index: 3;
+        }
+
+        div {
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          /* div he span 都是 li 的元素，后出来的盖住了前出来的 */
+          position: relative;
+          /*z-inde 值越小，显示在上面的优先级约小  */
+          z-index: 1;
+        }
+
+        div h2 {
+          text-align: center;
+          line-height: 8em;
+          color: white;
+        }
+
+        ul li:hover img{
+          z-index: -2;
+        }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li>
+        <span>热</span>
+        <img src="heima.jpg" alt="">
+        <div>
+          <h2>定位操作布局</h2>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

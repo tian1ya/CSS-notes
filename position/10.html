@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- 
+      定位的基本思想很简单，它允许你定义元素框
+      1. 相对于其正常位置应该出现的位置，
+      2. 或者相对于父元素、
+      3. 另一个元素甚至浏览器窗口本身的位置。
+
+      relative	相对定位, 相对于原来在文档中的位置
+
+      absolute	绝对定位, 相对于最近的含有 position 属性的 父亲标签，
+        如果没有该属性，那么就参照的是整个页面
+        
+      static	默认形为，参考文档流
+      fixed	固定定位
+      sticky	粘性定位
+
+     -->
+
+    
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        padding:200px 0 0 200px;
+      }
+
+      article {
+        width: 150px;
+        position: relative;
+        color: black;
+        cursor: pointer;
+      }
+
+      article div {
+        height: 50px;
+        border: solid 1px #dddddd;
+        text-align: center;
+        line-height: 3.5em;
+      }
+      article:hover div:nth-of-type(1) {
+        border-bottom: none;
+
+      }
+      article:hover div:nth-of-type(2) {
+        display: block;
+      }
+      article div:nth-of-type(1) {
+        /* background: rgb(182, 30, 30); */
+        background-color: #ffffff;
+        z-index: 5;
+      }
+
+      article div:nth-of-type(2) {
+
+        /* background: rgb(67, 180, 86); */
+        width: 300px;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        z-index: -1;
+        display: none;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <div>我的购物车</div>
+      <div>购物车中暂无商品</div>
+    </article>
+  </body>
+</html>
