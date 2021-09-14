@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- 
+    元素在交叉轴上有行的概念，理解这个概念会对理解align-items与align-content有更好的帮助。
+      align-item是控制元素在行上的排列
+      align-content是控制行在交差轴上的排列 
+        stretch	元素被拉伸以适应容器（默认值）
+        center	元素位于容器的中心
+        flex-start	元素位于容器的交叉轴开头
+        flex-end	元素位于容器的交叉轴结尾
+
+    注意这里交叉轴就是第二个轴
+
+    如果设置了 width | height | min-height | min-width | max-width |
+       max-height ，将影响stretch 的结果，因为 stretch 优先级你于宽高设置。
+
+
+  弹性元素
+    放在弹性盒子中的元素就是弹性元素，
+      * 不能使用 float 和 clear 规则
+      * 弹性元素均为块元素
+      * 绝对定位的弹性元素不参与弹性布局
+
+  align-self: 控制单个元素在交叉轴上的排列方式，
+  align-items: 控制容器中所有元素的排列
+  align-self： 是用于控制一个弹性元素在交叉轴上的排序
+    stretch	将空间平均分配给元素
+    flex-start	元素紧靠主轴起点
+    flex-end	元素紧靠主轴终点
+    center	元素从弹性容器中心开始
+
+  flex-grow： 将弹性盒子的可用空间，分配给弹性元素，可以使用证书或者小数声明
+  flex-shrink：与 flex-grow 相反 flex-shrink 是在弹性盒子装不下元素时定义的缩小值。
+  flex-basis：
+    flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）
+      。浏览器根据这个属性，计算主轴是否有多余空间。
+      可以是长度单位，也可以是百分比。flex-basis的优先级高于width、height属性。
+    
+  flex是flex-grow、flex-shrink 、flex-basis缩写组合。
+    建议使用 flex 面不要单独使用 flex-grow / flew-shrink / flex-basis 。
+
+  order： 用于控制弹性元素的位置，默认为 order:0 数值越小越在前面，可以负数或整数。
+  
+  绝对定位：
+    绝对定位的弹性元素不参与弹性布局
+
+  自动空间:
+    在弹性布局中对元素使用margin-right:auto 等形式可以自动撑满空间。下例为第一个ul设置 margin-right:auto 表示右侧空间自动撑满，第二个ul靠近父元素右边界。
+
+  一层一层都可以使用弹性
+  -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      color: #666;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      height: 50px;
+      background: blueviolet;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    footer section {
+      display: flex;
+      flex: 1 0;
+      flex-direction: column-reverse;
+      border-right: solid 1px #555;
+      border-top: solid 1px #555;
+    }
+
+    footer section:last-child {
+      border-right: none;
+    }
+
+    footer section h4 {
+      flex: 0 0 50px;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+    }
+
+    footer section ul {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      border: solid 1px #555;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    footer section ul li {
+      flex: 1 0 50px;
+      border-bottom: solid 1px #555;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    footer section ul li:last-child {
+      border: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main></main>
+  <footer>
+    <section>
+      <h4>教程</h4>
+      <ul>
+        <li>PHP</li>
+        <li>LINUx</li>
+      </ul>
+    </section>
+    <section>
+      <h4>直播</h4>
+    </section>
+  </footer>
+</body>
+
+</html>

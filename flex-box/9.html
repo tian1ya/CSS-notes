@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- 
+    元素在交叉轴上有行的概念，理解这个概念会对理解align-items与align-content有更好的帮助。
+      align-item是控制元素在行上的排列
+      align-content是控制行在交差轴上的排列 
+        stretch	元素被拉伸以适应容器（默认值）
+        center	元素位于容器的中心
+        flex-start	元素位于容器的交叉轴开头
+        flex-end	元素位于容器的交叉轴结尾
+
+    注意这里交叉轴就是第二个轴
+
+    如果设置了 width | height | min-height | min-width | max-width |
+       max-height ，将影响stretch 的结果，因为 stretch 优先级你于宽高设置。
+
+
+  弹性元素
+    放在弹性盒子中的元素就是弹性元素，
+      * 不能使用 float 和 clear 规则
+      * 弹性元素均为块元素
+      * 绝对定位的弹性元素不参与弹性布局
+
+  -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    head {
+      display: block;
+    }
+
+    body {
+      font-size: 14px;
+      color: #555;
+    }
+
+    article {
+      height: 200px;
+      border: solid 5px silver;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      /* align-items: stretch; */
+      /* align-items: flex-start; */
+      align-items: center;
+    }
+
+    article div {
+      width: 80px;
+      border: solid 5px blueviolet;
+      text-align: center;
+      font-size: 28px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <article>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </article>
+</body>
+
+</html>

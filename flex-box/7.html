@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- 
+
+      flex-wrap 属性规定flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向。
+      nowrap: 元素不拆行/列(默认值)
+      wrap: 容器元素再必要的时候拆行或者列
+      wrap-reverse： 容器元素在必要的时候拆行或者列，但是以相反的顺序
+      -->
+  <style>
+    * {
+      padding: 10;
+      margin: 10px;
+      outline: solid 1px silver;
+    }
+
+    body {
+      font-size: 14px;
+      color: #555;
+    }
+
+    article {
+      width: 500px;
+      border: solid 5px silver;
+      display: flex;
+      box-sizing: border-box;
+      padding: 10px;
+      /* flex-direction: row-reverse; */
+      /* flex-direction: row; */
+      /* flex-wrap: wrap-reverse; */
+      /* flex-direction: column-reverse; */
+      /* flex-wrap: wrap; */
+      /* 
+        flex-flow == flex-wrap + flex-direction
+       */
+       flex-flow: column wrap;
+    }
+
+    article * {
+      border: solid 5px blueviolet;
+      padding: 30px 80px;
+      margin: 10px;
+      text-align: center;
+      font-size: 28px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <article>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </article>
+</body>
+
+</html>

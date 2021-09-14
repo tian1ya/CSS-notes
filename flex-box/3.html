@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <!-- 
+
+      background-clip 设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面。
+        border-box:背景延伸至边框外沿（但是在边框下层
+        padding-box:背景延伸至内边距（padding）外沿
+        content-box: 背景被裁剪至内容区（content box）外沿
+        text :背景被裁剪成文字的前景色
+     -->
+
+     <!-- 
+       flex-box 布局
+      -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0px;
+      }
+
+      main {
+       height: 100vh;
+       background-color: red;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0px;
+        width: 100vw;
+        height: 50px;
+        background: linear-gradient(to bottom, #f3f3f3, #dddddd, #f3f3f3);
+        border-top: solid 2px #dddddd;
+      }
+
+      footer div {
+        float: left;
+        width:  33%;
+        height: 100%;
+        background-color: black;
+        text-align: center;
+        line-height: 3em;
+        color: #555555;
+      }
+
+      footer div:nth-child(n+2) {
+        /* border-left: solid 2px #cccccc; */
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <main>
+    </main>
+    <footer>
+      <div>asa</div>
+      <div>sdsd</div>
+      <div>dsds</div>
+    </footer>
+  </body>
+</html>

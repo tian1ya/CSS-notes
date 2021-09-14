@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <!-- 
+
+      background-clip 设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面。
+        border-box:背景延伸至边框外沿（但是在边框下层
+        padding-box:背景延伸至内边距（padding）外沿
+        content-box: 背景被裁剪至内容区（content box）外沿
+        text :背景被裁剪成文字的前景色
+     -->
+
+     <!-- 
+       flex-box 布局
+      -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0px;
+      }
+
+      body {
+        /* 
+          去掉 display: flex; 那么 main 和 footer 就是上下垂直排列的，因为都是 block的
+          加上之后就变成了左右水平， 所以加上之后默认是水平左右排列的
+
+          弹性盒模型
+            首先是一个盒子
+            然后再盒子上加属性，控制盒子里面元素的排列方式，是水平排列，还是垂直排列
+
+       */
+        display: flex;
+        height: 100vh;
+
+        /* 改变默认排列，变为上下垂直 */
+        flex-direction: column;
+      }
+      main {
+        background: #ddd;
+        flex: 1;
+      }
+
+      footer {
+        background: red;
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      footer div {
+        flex: 1;
+        text-align: center;
+        line-height: 3em;
+        color: black;
+        border: solid 2px black;
+      }
+
+    
+    </style>
+
+  </head>
+
+  <body>
+    <main>ccc
+    </main>
+    <footer>
+      <div>asa</div>
+      <div>sdsd</div>
+      <div>dsds</div>
+      <div>dsdsasas</div>
+      <div>dsdsasas</div>
+    </footer>
+  </body>
+</html>

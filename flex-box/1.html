@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <!-- 
+
+      background-clip 设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面。
+        border-box:背景延伸至边框外沿（但是在边框下层
+        padding-box:背景延伸至内边距（padding）外沿
+        content-box: 背景被裁剪至内容区（content box）外沿
+        text :背景被裁剪成文字的前景色
+     -->
+
+     <!-- 
+       传统方式布局
+      -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0px;
+      }
+
+      main {
+        position: relative;
+        height: 100vh;
+
+      }
+
+      main nav {
+        width: 80px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0px;
+        background-color: blue;
+      }
+
+      main article {
+        background-color: #ccc;
+        padding-left: 90px;
+        background-clip: content-box;
+        height: 100vh;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <main>
+      <div>
+        <nav>菜单</nav>
+        <article>dfdfd</article>
+      </div>
+    </main>
+  </body>
+</html>

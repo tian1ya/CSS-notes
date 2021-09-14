@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- 
+    元素在交叉轴上有行的概念，理解这个概念会对理解align-items与align-content有更好的帮助。
+      align-item是控制元素在行上的排列
+      align-content是控制行在交差轴上的排列 
+        stretch	元素被拉伸以适应容器（默认值）
+        center	元素位于容器的中心
+        flex-start	元素位于容器的交叉轴开头
+        flex-end	元素位于容器的交叉轴结尾
+
+    注意这里交叉轴就是第二个轴
+
+    如果设置了 width | height | min-height | min-width | max-width |
+       max-height ，将影响stretch 的结果，因为 stretch 优先级你于宽高设置。
+
+
+  弹性元素
+    放在弹性盒子中的元素就是弹性元素，
+      * 不能使用 float 和 clear 规则
+      * 弹性元素均为块元素
+      * 绝对定位的弹性元素不参与弹性布局
+
+  align-self: 控制单个元素在交叉轴上的排列方式，
+  align-items: 控制容器中所有元素的排列
+  align-self： 是用于控制一个弹性元素在交叉轴上的排序
+    stretch	将空间平均分配给元素
+    flex-start	元素紧靠主轴起点
+    flex-end	元素紧靠主轴终点
+    center	元素从弹性容器中心开始
+
+  flex-grow： 将弹性盒子的可用空间，分配给弹性元素，可以使用证书或者小数声明
+  flex-shrink：与 flex-grow 相反 flex-shrink 是在弹性盒子装不下元素时定义的缩小值。
+
+  -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      padding-top: 50px;
+      padding-left: 50px;
+    }
+
+    article {
+      border: solid 5px silver;
+      height: 100px;
+      width: 550px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+    }
+
+    article div {
+      /* 将剩下的空白平均分给3个弹性元素 */
+      flex-grow: 1;
+      /* width: 100px; */
+      height: 100px;
+      min-width:80px;
+      background: blueviolet;
+      background-clip: content-box;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 28px;
+      color: white;
+    }
+
+    article div:nth-of-type(1) {
+      /* 第一个弹性盒子分的剩余的盒子的 1/ 10 */
+      width: 100px;
+      flex-grow: 1;
+    }
+
+    article div:nth-of-type(2) {
+      /* 第一个弹性盒子分的剩余的盒子的 2/ 10 */
+      width: 100px;
+      flex-grow: 3;
+    }
+
+    article div:nth-of-type(3) {
+      /* 第一个弹性盒子分的剩余的盒子的 6/ 10 */
+      width: 300px;
+      flex-grow: 6;
+    }
+  </style>
+
+</head>
+
+<body>
+  <article>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </article>
+</body>
+
+</html>

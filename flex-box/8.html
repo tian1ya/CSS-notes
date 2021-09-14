@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- 
+    justofy-content: 用户控制在主轴上的排列方式，再次强调是主轴的排列方式
+      flex-start: 元素紧靠主轴起点
+      flex-end: 元素紧靠主轴终点
+      center: 元素冲弹性容器中心开始
+      space-between: 第一个元素靠七点，最后元素靠近终点，余下元素平均分配空间
+      space-aroundL 每个元素两侧的间隔相等，所以元素之间的间隔比元素和容器的边距
+        的间隔大一倍
+      space-evenly: 元素间距离平均分配
+     
+  -->
+  <style>
+    * {
+      /* padding: 0px; */
+      /* margin: 0px; */
+      padding:  10px;
+      margin: 10px;
+    }
+
+    body {
+      font-size: 14px;
+      color: #555;
+    }
+
+    article {
+      border: solid 5px silver;
+      box-sizing: border-box;
+      height: 400px;
+      /* width: 500px; */
+      display: flex;
+      /* padding: 10px; */
+
+       flex-flow: column wrap;
+       /* justify-content: space-evenly; */
+       /* justify-content: space-around; */
+       justify-content: center;
+    }
+
+    article * {
+      border: solid 5px blueviolet;
+      padding: 30px 80px;
+      margin: 10px;
+      text-align: center;
+      font-size: 28px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <article>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </article>
+</body>
+
+</html>
