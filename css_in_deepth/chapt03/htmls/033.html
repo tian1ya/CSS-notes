@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      background-color: #eeeeee;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      padding: 1em 1.5em;
+      color: #ffffff;
+      background-color: #0072b0;
+      border-radius: .5em;
+    }
+
+    .cintainer {
+      display: flex;
+    }
+
+    .main {
+      width: 70%;
+      padding: 1em 1.5em;
+      background-color: #ffffff;
+      border-radius: .5em;
+    }
+
+    .asidebar {
+      width: 30%;
+      padding: 1.5em;
+      margin-top: 0;
+      margin-left: 1.5em;
+      background-color: #ffffff;
+      border-radius: .5em;
+    }
+
+    .button-link {
+      display: block;
+      padding: 0.5em;
+      color: #ffffff;
+      background-color: #0090c9;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .sponsor-link {
+      display: block;
+      color: #ffffff;
+      background-color: #0072b0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* 使用相邻兄弟组合器给按钮之间加上一个外边距 */
+    /* .button-link+.button-link {
+      margin-top: 1.5em;
+    } */
+
+    /* 
+      该选择器开头是一个通用选择器（＊），它可以选中所有元素，后面是一个相邻兄弟组合器（+），
+      最后是另一个通用选择器。它因形似一只眼神空洞的猫头鹰而得名。猫头鹰选择器功能接近此前介绍的选择器：
+      .social-button + .social-button，但是它不会选中直接跟在其他按钮后面的按钮，而是会选中直接跟在其他元素后面的任何元素。
+      也就是说，它会选中页面上有着相同父级的非第一个子元素。 
+  */
+    body *+* {
+      margin-top: 1.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Franklin Running Club</h1>
+  </header>
+  <div class="cintainer">
+    <main class="main">
+      <h2>Come Join us!</h2>
+      <p>
+        网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间距
+        网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间
+      </p>
+    </main>
+    <aside class="asidebar">
+      <a href="/twitter" class="button-link">Follow us on Twitter</a>
+      <a href="/facebook" class="button-link">Follow us on Facebook</a>
+      <a href="/facebook" class="sponsor-link">Follow us on Facebook</a>
+    </aside>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .nav a {
+      color: white;
+      background-color: #13a4a4;
+      padding: 5px;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    /* 晚引入，优先级更高 */
+    a.features {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1 id="page-title" class="title">Welcome Coffee Roasters</h1>
+    <nav>
+      <ul id="main-nav" class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coffees">Coffee</a></li>
+        <li><a href="/brewers">Brewars</a></li>
+        <li><a href="/special" class="features">Specials</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

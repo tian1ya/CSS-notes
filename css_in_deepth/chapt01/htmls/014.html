@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 4个标签 */
+    html body head h1 {
+      color: blue;
+    }
+/* 3个标签和 1个类选择器：3最高有限 */
+    body header.page-header h1 {
+      color: orange;
+    }
+/* 2个类选择器：2高优先级 */
+    .page-header .title {
+      color: green;
+    }
+    /* 一个id 选择器： 最高优先 */
+    #page-title {
+      color: red;
+    }
+    /*
+
+    */
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1 id="page-title" class="title">Welcome Coffee Roasters</h1>
+    <nav>
+      <ul id="main-nav" class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coffees">Coffee</a></li>
+        <li><a href="/brewers">Brewars</a></li>
+        <li><a href="/special" class="features" style="background-color: yellow;">Specials</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

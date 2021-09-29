@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 全局设置属性 */
+    * ,::before, ::after {
+      box-sizing: border-box;
+    }
+
+    /* 第二种定义方式 */
+    /* :root { */
+      /* box-sizing: border-box; */
+    /* } */
+
+    body {
+      background-color: #eeeeee;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      color: #ffffff;
+      background-color: #0072b0;
+      border-radius: .5em;
+    }
+
+    main {
+      display: block;
+    }
+
+    .cintainer {
+      display: table;
+      width: 100%;
+      border-spacing: 1.5em 0;
+    }
+
+    .main {
+      display: table-cell;
+      width: 70%;
+      background-color: #ffffff;
+      border-radius: .5em;
+    }
+
+    .asidebar {
+      display: table-cell;
+      width: 30%;
+      margin-left: 1.5em;
+      padding: 1.5em;
+      background-color: #ffffff;
+      border-radius: .5em;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Franklin Running Club</h1>
+  </header>
+  <div class="cintainer">
+    <main class="main">
+      <h2>Come Join us!</h2>
+      <p>
+        网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间距
+        网页组件之间一致的间距网页组件之间一致的间距网页组件之间一致的间
+      </p>
+    </main>
+    <aside class="asidebar">
+      <div class="widget"></div>
+      <div class="widget"></div>
+    </aside>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      /* 作用到松油的屏幕，但是会被大屏的尺寸覆盖 */
+      font-size: 0.75em;
+    }
+
+    @media (min-width: 800px) {
+      :root {
+        /* 仅仅作用到 800px 宽度以及以上的屏幕，覆盖之前的值 */
+        font-size: 0.875em;
+      }
+    }
+
+    @media(min-width: 1200px) {
+      :root {
+        /* 仅仅作用到 1200px 宽度以及以上的屏幕，覆盖之前的值 */
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="panel">
+    <h2>Single-origin</h2>
+    <div class="panel-body">
+      em和rem，就不是绝对单位，而是相对单位。相对单位的值会根据外部因素发生变化。
+    </div>
+  </div>
+</body>
+
+</html>
