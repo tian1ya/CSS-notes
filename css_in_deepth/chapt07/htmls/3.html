@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 200vh;
+      margin: 0;
+    }
+
+    button {
+      padding: 0.5em 0.7em;
+      border: 1px solid #8d8d8d;
+      background-color: white;
+      font-size: 1em;
+    }
+
+    .top-banner {
+      padding: 1em 0;
+      background-color: #ffd698;
+    }
+
+    .top-banner-inner {
+      width: 80%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .modal {
+      display: none;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+      /* 将模态框的蒙层拉到没有设置 z-index 的元素前面 */
+    }
+
+    .modal-body {
+      position: fixed;
+      top: 3em;
+      right: 20%;
+      bottom: 3em;
+      left: 20%;
+      padding: 2em 3em;
+      background-color: white;
+      overflow: auto;
+      z-index: 2;
+      /* 将模态框的主体设置到蒙层前面 */
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 0.3em;
+      right: 0.3em;
+      padding: 0.3em;
+      cursor: pointer;
+      font-size: 2em;
+      height: 1em;
+      width: 1em;
+      text-indent: 10em; 
+      /* 元素溢出并隐藏 text-indent 将文字推到右边，溢出元素*/
+      overflow: hidden;
+      border: 0;
+    }
+
+    .modal-close::after {
+      /* 绝对定位，相对最近父定位元素 */
+      position: absolute;
+      line-height: 0.5;
+      top: 0.2em;
+      left: 0.1em;
+      text-indent: 0;
+      content: "\00D7";
+    }
+
+    /* 更常见的用法是使用position: relative给它里面的绝对定位元素创建一个包含块。 */
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+    .dropdown-mune {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 2.1em;
+      min-width: 100%;
+      background-color: #eee;
+    }
+    .dropdown:hover .dropdown-mune {
+      display: block;
+    }
+    .submenu {
+      padding-left: 0;
+      margin: 0;
+      list-style-type: none;
+      border: 1px solid #999;
+    }
+    .submenu > li + li {
+      border: 1px solid #999;
+    }
+
+    .submenu > li > a {
+      display: block;
+      padding: .5em 1.5em;
+      background-color: #eee;
+      color: #369;
+      text-decoration: none;
+    }
+
+    .submenu > li > a:hover {
+      background-color: #fff;
+    }
+    .dropdown-label {
+      background-color: #eee;
+      padding: 0.5em 2em 0.5em 1.5em;
+      border: 1px solid #ccc;
+    }
+    .dropdown-label::after {
+      content: "";
+      position: absolute;
+      right: 1em;
+      top: 1em;
+      border: 0.3em solid;
+      /* 向下的箭头 */
+      border-color: black transparent transparent ; 
+    }
+    .dropdown:hover .dropdown-label::after {
+      top: 0.7em;
+      /* 向上的箭头 */
+      border-color: transparent transparent black;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-banner">
+    <div class="top-banner-inner">
+      <p>
+        Find out what goging on at wambat coffee each month
+        Find out what goging on at wambat coffee each month
+        <button id="open">Sign up</button>
+      </p>
+    </div>
+  </header>
+  <div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-body">
+      <button class="modal-close" id="close">close</button>
+      <h2>Wobat newsleter</h2>
+      <p>Sign up for</p>
+      <form>
+        <p>
+          <label for="email">email address</label>
+          <input type="text" name="email">
+        </p>
+        <p>
+          <button type="submit">submit</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav>
+      <div class="dropdown">
+        <div class="dropdown-label">Main Menu</div>
+        <div class="dropdown-mune">
+          <ul class="submenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/prince">Princing</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1>Wobat Coffee</h1>
+  </div>
+
+  <script type="text/javascript">
+    var open = document.getElementById('open')
+    var close = document.getElementById('close')
+    var modal = document.getElementById('modal')
+
+    open.addEventListener('click', function(event) {
+      event.preventDefault();
+      modal.style.display = 'block'
+    });
+
+    close.addEventListener('click', function(event) {
+      event.preventDefault();
+      modal.style.display = 'none'
+    })
+  </script>
+</body>
+</html>
